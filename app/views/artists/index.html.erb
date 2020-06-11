@@ -1,0 +1,6 @@
+<h1>Artist Index Page</h1>
+<% @artists.each do |artist| %><br>
+<%= link_to artist.name, artist %>
+<% end  %><br><br>
+
+<b><%= link_to "Create Aritist", action: "new" %></b>

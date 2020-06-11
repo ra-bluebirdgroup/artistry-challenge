@@ -1,0 +1,12 @@
+<h1>Create new Artist Instrument association</h1>
+<%= form_for @artist_instrument do |f| %>
+<% if flash[:errors] %><br>
+ <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end  %>
+ <% end  %>
+
+Artist: <%= f.collection_select :artist_id, Artist.all, :id, :name %>
+Destination:  <%= f.collection_select :instrument_id, Instrument.all, :id, :name %>
+<%= f.submit %>
+<% end %>
